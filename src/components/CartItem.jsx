@@ -20,21 +20,17 @@ function CartItem() {
           <h3>{item.name}</h3>
           <p>Price: AED {item.price}</p>
 
-          <button
-            onClick={() =>
-              dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))
-            }
-          >
+          <button onClick={() =>
+            dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))
+          }>
             -
           </button>
 
           <span>{item.quantity}</span>
 
-          <button
-            onClick={() =>
-              dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))
-            }
-          >
+          <button onClick={() =>
+            dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))
+          }>
             +
           </button>
 
@@ -47,6 +43,15 @@ function CartItem() {
       ))}
 
       <h3>Grand Total: AED {totalAmount}</h3>
+
+      {/* ✅ NEW REQUIRED FEATURES */}
+      <button onClick={() => alert("Checkout Successful!")}>
+        Checkout
+      </button>
+
+      <button onClick={() => window.location.reload()}>
+        Continue Shopping
+      </button>
     </div>
   );
 }
